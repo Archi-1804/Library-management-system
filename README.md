@@ -6,7 +6,8 @@ A state-of-the-art, high-performance **MERN Stack Library Management System** cr
 
 ## 🌐 Live Deployment
 
-🚀 **Live App**: [Library Management System](https://github.com/Archi-1804/Library-management-system)
+- 🎨 **Frontend Web App**: [https://library-management-system-mern-frontend.onrender.com](https://library-management-system-mern-frontend.onrender.com)
+- ⚙️ **Backend API Server**: [https://library-management-system-mern-backend.onrender.com](https://library-management-system-mern-backend.onrender.com)
 
 ---
 
