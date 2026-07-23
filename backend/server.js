@@ -25,17 +25,17 @@ app.use("/api/transactions", transactionRoutes);
 app.use("/api/categories", categoryRoutes);
 
 /* MongoDB connection */
-mongoose.connect(
-  process.env.MONGO_URL,
-  {
+if (process.env.MONGO_URL) {
+  mongoose.connect(process.env.MONGO_URL, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  },
-  () => {
+  }).then(() => {
     console.log("MONGODB CONNECTED");
-  }
-);
+  }).catch((err) => {
+    console.error("MongoDB Connection Error:", err);
+  });
+}
 
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to LibraryApp");

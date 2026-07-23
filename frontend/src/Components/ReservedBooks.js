@@ -12,7 +12,7 @@ function ReservedBooks() {
                     <th>Date</th>
                 </tr>
                 <tr>
-                    <td>Pranav</td>
+                    <td>Archi</td>
                     <td>Rich Dad Poor Dad</td>
                     <td>12/7/2021</td>
                 </tr>
