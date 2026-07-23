@@ -6,7 +6,7 @@ A state-of-the-art, high-performance **MERN Stack Library Management System** cr
 
 ## 🌐 Live Deployment
 
-- 🎨 **Frontend Web App**: [https://frontend-archi-1804s-projects.vercel.app](https://frontend-archi-1804s-projects.vercel.app)
+- 🎨 **Frontend Web App**: [https://frontend-one-phi-76.vercel.app](https://frontend-one-phi-76.vercel.app)
 - ⚙️ **Backend API Server**: [https://backend-archi-1804s-projects.vercel.app](https://backend-archi-1804s-projects.vercel.app)
 
 ---
