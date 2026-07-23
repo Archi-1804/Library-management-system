@@ -6,8 +6,8 @@ A state-of-the-art, high-performance **MERN Stack Library Management System** cr
 
 ## 🌐 Live Deployment
 
-- 🎨 **Frontend Web App**: [https://library-management-system-mern-frontend.onrender.com](https://library-management-system-mern-frontend.onrender.com)
-- ⚙️ **Backend API Server**: [https://library-management-system-mern-backend.onrender.com](https://library-management-system-mern-backend.onrender.com)
+- 🎨 **Frontend Web App**: [https://library-management-system-mern-frontend.vercel.app](https://library-management-system-mern-frontend.vercel.app)
+- ⚙️ **Backend API Server**: [https://library-management-system-mern-backend.vercel.app](https://library-management-system-mern-backend.vercel.app)
 
 ---
 
