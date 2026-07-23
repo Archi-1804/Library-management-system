@@ -4,6 +4,12 @@ A state-of-the-art, high-performance **MERN Stack Library Management System** cr
 
 ---
 
+## 🌐 Live Deployment
+
+🚀 **Live App**: [Library Management System](https://github.com/Archi-1804/Library-management-system)
+
+---
+
 ## Key Highlights & Features 🚀
 
 - **Modern Clean Light Theme**: Designed with custom CSS variables, floating pill navigation containers, and accessible contrast.
