@@ -1,53 +1,112 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-
-.about-box{
-    background-color: rgb(16,25,13);
+.about-section {
+    padding: var(--space-4) 0;
+    background: var(--surface-0);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
-/* Mobile View */
-@media screen and (max-width: 768px){
-    .about-data{
-        display: grid;
-    }   
-    .about-data p{
-        margin-left: 16px;
-        margin-right: 16px;
-        font-size: 13px;
-        font-family:'Poppins', sans-serif ;
-        text-align: justify;
-        padding: 15px;
-        color: rgb(220,225,219);
-    }
-}
-
-/* Desktop View */
-.about-title{
-    position: relative;
-    color: rgb(238,129,30);
-    text-align: center;
-    font-size: 32px;
-    padding: 25px;
-}
-
-.about-img img{
+.about-container {
     width: 100%;
-    max-width: 700px;
-    border-radius: 25px;
-    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-@media screen and (min-width:768px) {
-    .about-data p{
-        margin-left: 50px;
-        margin-right: 50px;
-        font-size: 15px;
-        font-family:'Poppins', sans-serif ;
-        text-align: justify;
-        color: rgb(220,225,219);
-        padding: 15px;
-    }
-    .about-data{
-        display: grid;
-        grid-template-columns: 50% 50%;
-    } 
+.about-card-bento {
+    padding: var(--space-8);
 }
+
+.about-grid-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-6);
+    align-items: center;
+}
+
+.about-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.about-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+.about-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.about-list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+.list-check-icon {
+    color: #10B981 !important;
+    font-size: 18px !important;
+}
+
+/* Code Snippet Preview Box */
+.code-snippet-box {
+    background: var(--surface-1);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.snippet-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.snippet-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.snippet-title {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+    margin-left: 6px;
+}
+
+.snippet-code {
+    padding: var(--space-3);
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-indigo);
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+    .about-grid-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card-bento {
+        padding: var(--space-4);
+    }
+}
+
+

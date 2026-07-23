@@ -1,47 +1,107 @@
-import React from 'react'
-import './ImageSlider.css'
-import { Carousel } from 'react-bootstrap'
+import React from 'react';
+import './ImageSlider.css';
+import { Link } from 'react-router-dom';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import SearchIcon from '@material-ui/icons/Search';
+import BookmarkIcon from '@material-ui/icons/Bookmark';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 function ImageSlider() {
     return (
-        <div className='slider'>
-            <Carousel>
-                <Carousel.Item interval={1000}>
-                    <img
-                        className="d-block w-100"
-                        src="https://images.unsplash.com/photo-1616070152767-3eb99cf10509?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item interval={500}>
-                    <img
-                        className="d-block w-100"
-                        src="https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80"
-                        alt="Second slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="https://images.unsplash.com/photo-1608454367599-c133fcab1245?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                        alt="Third slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </div>
-    )
+        <section className="hero-section">
+            <div className="hero-container">
+                {/* Main Hero Headline */}
+                <h1 className="hero-main-title">
+                    Knowledge, curated for <br className="desktop-break" />
+                    <span className="text-gradient-indigo">modern intellects.</span>
+                </h1>
+
+                {/* Subtitle */}
+                <p className="hero-subtitle">
+                    Streamline book reservations, monitor real-time circulation analytics, and explore over 35,000+ digital and print publications in a unified workstation.
+                </p>
+
+                {/* CTA Action Buttons */}
+                <div className="hero-cta-group">
+                    <Link to="/books" className="btn-primary-indigo">
+                        <span>Explore Catalog</span>
+                        <ArrowForwardIcon style={{ fontSize: 18 }} />
+                    </Link>
+                    <Link to="/signin" className="btn-secondary-border">
+                        <span>Member Portal</span>
+                    </Link>
+                </div>
+
+                {/* Interactive Product Mockup Dashboard */}
+                <div className="hero-mockup-wrapper">
+                    <div className="mockup-window bento-card">
+                        {/* Mockup Header Bar */}
+                        <div className="mockup-header">
+                            <div className="window-dots">
+                                <span className="dot dot-red"></span>
+                                <span className="dot dot-yellow"></span>
+                                <span className="dot dot-green"></span>
+                            </div>
+                            <div className="mockup-address-bar">
+                                <span className="address-text">librahub.internal/catalog/search</span>
+                            </div>
+                            <div className="status-live-indicator">
+                                <CheckCircleIcon style={{ fontSize: 14, color: '#10B981', marginRight: 4 }} />
+                                <span>Operational</span>
+                            </div>
+                        </div>
+
+                        {/* Mockup Body Content */}
+                        <div className="mockup-body">
+                            <div className="mockup-search-row">
+                                <div className="mockup-search-box">
+                                    <SearchIcon className="mockup-search-icon" />
+                                    <span className="mockup-query">"Artificial Intelligence & Machine Learning"</span>
+                                    <span className="mockup-count-tag">142 Results</span>
+                                </div>
+                                <button className="mockup-filter-btn">
+                                    <BookmarkIcon style={{ fontSize: 14 }} />
+                                    <span>Hold Queue</span>
+                                </button>
+                            </div>
+
+                            {/* Mockup Book Cards Ribbon */}
+                            <div className="mockup-cards-ribbon">
+                                <div className="mini-book-card">
+                                    <img src="https://images-na.ssl-images-amazon.com/images/I/41xShLch03L._SX376_BO1,204,203,200_.jpg" alt="Clean Code" className="mini-cover" />
+                                    <div className="mini-info">
+                                        <span className="mini-tag">Available</span>
+                                        <h4 className="mini-title">Clean Code</h4>
+                                        <p className="mini-author">Robert C. Martin</p>
+                                    </div>
+                                </div>
+
+                                <div className="mini-book-card">
+                                    <img src="https://images-na.ssl-images-amazon.com/images/I/713jIoMO3UL.jpg" alt="Sapiens" className="mini-cover" />
+                                    <div className="mini-info">
+                                        <span className="mini-tag tag-accent">Reserved</span>
+                                        <h4 className="mini-title">Sapiens: A Brief History</h4>
+                                        <p className="mini-author">Yuval Noah Harari</p>
+                                    </div>
+                                </div>
+
+                                <div className="mini-book-card">
+                                    <img src="https://images-na.ssl-images-amazon.com/images/I/91VokXkn8hL.jpg" alt="Atomic Habits" className="mini-cover" />
+                                    <div className="mini-info">
+                                        <span className="mini-tag">Available</span>
+                                        <h4 className="mini-title">Atomic Habits</h4>
+                                        <p className="mini-author">James Clear</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }
 
-export default ImageSlider
+export default ImageSlider;
+
+

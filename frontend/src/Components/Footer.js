@@ -1,51 +1,87 @@
-import React from 'react'
-import './Footer.css'
-
+import React from 'react';
+import './Footer.css';
+import { Link } from 'react-router-dom';
+import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TelegramIcon from '@material-ui/icons/Telegram';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import PhoneIcon from '@material-ui/icons/Phone';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 function Footer() {
     return (
-        <div className='footer'>
-            <div>
-                <div className='footer-data'>
-                    <div className="contact-details">
-                        <h1>Contact Us</h1>
-                        <p>Librarian</p>
-                        <p>Government School</p>
-                        <p>Visakhapatnam-530041</p>
-                        <p>Andhra Pradesh</p>
-                        <p>India</p>
-                        <p><b>Email:</b>example@gmail.com</p>
+        <footer className="footer-wrapper">
+            <div className="footer-container">
+                <div className="footer-top-grid">
+                    <div className="footer-col brand-col">
+                        <Link to="/" className="footer-brand">
+                            <div className="footer-logo-icon">
+                                <LocalLibraryIcon style={{ fontSize: 24, color: '#FFFFFF' }} />
+                            </div>
+                            <span className="footer-brand-text">LIBRA<span className="brand-accent">HUB</span></span>
+                        </Link>
+                        <p className="footer-about-text">
+                            Empowering students, educators, and lifelong learners with instant access to academic resources, digital holds, and rich literary catalogs.
+                        </p>
+                        <div className="footer-socials">
+                            <a href="#home" aria-label="Twitter" className="social-link"><TwitterIcon /></a>
+                            <a href="#home" aria-label="LinkedIn" className="social-link"><LinkedInIcon /></a>
+                            <a href="#home" aria-label="Telegram" className="social-link"><TelegramIcon /></a>
+                            <a href="#home" aria-label="Instagram" className="social-link"><InstagramIcon /></a>
+                        </div>
                     </div>
-                    <div className='usefull-links'>
-                        <h1>Usefull Links</h1>
-                        <a href='#home'>Link-1</a>
-                        <a href='#home'>Link-1</a>
-                        <a href='#home'>Link-1</a>
-                        <a href='#home'>Link-1</a>
+
+                    <div className="footer-col">
+                        <h4 className="footer-col-title">Quick Navigation</h4>
+                        <ul className="footer-links">
+                            <li><Link to="/">Home Overview</Link></li>
+                            <li><Link to="/books">Books Catalog</Link></li>
+                            <li><Link to="/signin">Member Login</Link></li>
+                            <li><a href="#about">About Our Library</a></li>
+                            <li><a href="#news">News & Events</a></li>
+                        </ul>
                     </div>
-                    <div className='librarian-details'>
-                        <h1>Librarian</h1>
-                        <p>Name</p>
-                        <p>Education</p>
-                        <p>Contact: +91 9123456787</p>
+
+                    <div className="footer-col">
+                        <h4 className="footer-col-title">Library Services</h4>
+                        <ul className="footer-links">
+                            <li><a href="#home">Digital Book Holds</a></li>
+                            <li><a href="#home">Study Room Booking</a></li>
+                            <li><a href="#home">E-Resource Portal</a></li>
+                            <li><a href="#home">Borrowing Guidelines</a></li>
+                            <li><a href="#home">Research Assistance</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="footer-col contact-col">
+                        <h4 className="footer-col-title">Contact & Help Desk</h4>
+                        <div className="contact-info-list">
+                            <div className="contact-item">
+                                <LocationOnIcon className="contact-icon" />
+                                <span>Government Campus, Visakhapatnam - 530041, AP, India</span>
+                            </div>
+                            <div className="contact-item">
+                                <MailOutlineIcon className="contact-icon" />
+                                <span>support@librahub.edu</span>
+                            </div>
+                            <div className="contact-item">
+                                <PhoneIcon className="contact-icon" />
+                                <span>+91 91234 56789</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="contact-social" >
-                    <a href='#home' className='social-icon'><TwitterIcon style={{ fontSize: 40,color:"rgb(283,83,75)"}} /></a>
-                    <a href='#home' className='social-icon'><LinkedInIcon style={{ fontSize: 40,color:"rgb(283,83,75)"}} /></a>
-                    <a href='#home' className='social-icon'><TelegramIcon style={{ fontSize: 40,color:"rgb(283,83,75)"}} /></a>
-                    <a href='#home' className='social-icon'><InstagramIcon style={{ fontSize: 40,color:"rgb(283,83,75)"}} /></a>
+
+                <div className="footer-bottom-bar">
+                    <p className="copyright-text">
+                        &copy; 2026 LibraHub LMS. All rights reserved. Designed with <span className="heart">❤️</span> for modern education.
+                    </p>
                 </div>
             </div>
-            <div className='copyright-details'>
-                <p className='footer-copyright'>&#169; 2026 copyright all right reserved<br /><span>Designed with ❤️ by Archi Shivhare</span></p>
-            </div>
-        </div>
-    )
+        </footer>
+    );
 }
 
-export default Footer
+export default Footer;

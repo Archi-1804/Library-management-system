@@ -1,49 +1,70 @@
-import React from 'react'
-import './ReservedBooks.css'
+import React from 'react';
+import './ReservedBooks.css';
+import BookmarkIcon from '@material-ui/icons/Bookmark';
 
 function ReservedBooks() {
+    const activityStream = [
+        { member: "Archi Shivhare", role: "Student Member", book: "Rich Dad Poor Dad", date: "2 mins ago", status: "Ready for Pickup" },
+        { member: "Sashank V.", role: "Faculty", book: "The Subtle Art of Not Giving", date: "14 mins ago", status: "In Transit" },
+        { member: "Tanishq Sharma", role: "Researcher", book: "Wings Of Fire", date: "1 hour ago", status: "Ready for Pickup" },
+        { member: "Akhil Kumar", role: "Student Member", book: "The Secret", date: "2 hours ago", status: "Processing" },
+        { member: "Surya K.", role: "Student Member", book: "Clean Code", date: "3 hours ago", status: "Hold Active" }
+    ];
+
     return (
-        <div className='reservedbooks-container'>
-            <h className='reservedbooks-title'>Books On Hold</h>
-            <table className='reservedbooks-table'>
-                <tr>
-                    <th>Name</th>
-                    <th>Book</th>
-                    <th>Date</th>
-                </tr>
-                <tr>
-                    <td>Archi</td>
-                    <td>Rich Dad Poor Dad</td>
-                    <td>12/7/2021</td>
-                </tr>
-                <tr>
-                    <td>Sashank</td>
-                    <td>The Subtle Art</td>
-                    <td>10/7/2021</td>
-                </tr>
-                <tr>
-                    <td>Tanishq</td>
-                    <td>Wings Of Fire</td>
-                    <td>15/9/2021</td>
-                </tr>
-                <tr>
-                    <td>Akhil</td>
-                    <td>The Secret</td>
-                    <td>02/9/2021</td>
-                </tr>
-                <tr>
-                    <td>Surya</td>
-                    <td>Bad Guys</td>
-                    <td>21/7/2021</td>
-                </tr>
-                <tr>
-                    <td>Dinesh</td>
-                    <td>Giovanni Rovelli</td>
-                    <td>02/7/2021</td>
-                </tr>
-            </table>
-        </div>
-    )
+        <section className="activity-section" id="activity">
+            <div className="activity-container">
+                <div className="catalog-header text-center">
+                    <div>
+                        <span className="badge-pill badge-emerald mb-1">
+                            <BookmarkIcon style={{ fontSize: 14, marginRight: 4 }} /> Live Stream
+                        </span>
+                        <h2 className="catalog-title">Active Circulation & Hold Monitor</h2>
+                    </div>
+                </div>
+
+                <div className="activity-card bento-card">
+                    <div className="table-responsive">
+                        <table className="activity-table">
+                            <thead>
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Reserved Title</th>
+                                    <th>Timestamp</th>
+                                    <th>Circulation Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {activityStream.map((item, index) => (
+                                    <tr key={index}>
+                                        <td>
+                                            <div className="member-info-box">
+                                                <div className="avatar-dot">{item.member.charAt(0)}</div>
+                                                <div>
+                                                    <span className="member-name">{item.member}</span>
+                                                    <span className="member-role">{item.role}</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="book-title-cell">{item.book}</td>
+                                        <td className="time-cell">{item.date}</td>
+                                        <td>
+                                            <span className={`activity-status-pill ${item.status === 'Ready for Pickup' ? 'pill-ready' : item.status === 'Processing' ? 'pill-proc' : 'pill-active'}`}>
+                                                <span className="status-dot"></span>
+                                                {item.status}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }
 
-export default ReservedBooks
+export default ReservedBooks;
+
+

@@ -1,11 +1,21 @@
 import { createContext, useEffect, useReducer } from "react"
 import AuthReducer from "./AuthReducer"
 
+const getUserFromLocalStorage = () => {
+    try {
+        const item = localStorage.getItem("user");
+        if (!item || item === "undefined") return null;
+        return JSON.parse(item);
+    } catch (e) {
+        return null;
+    }
+};
+
 const INITIAL_STATE = {
-    user:JSON.parse(localStorage.getItem("user")) || null,
-    isFetching:false,
-    error:false
-}
+    user: getUserFromLocalStorage(),
+    isFetching: false,
+    error: false
+};
 
 /* Reads the data from the Provider and changes INITIAL_STATE */
 export const AuthContext = createContext(INITIAL_STATE)

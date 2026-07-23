@@ -7,6 +7,7 @@ import userRoutes from "./routes/users.js";
 import bookRoutes from "./routes/books.js";
 import transactionRoutes from "./routes/transactions.js";
 import categoryRoutes from "./routes/categories.js";
+import { seedUsers } from "./seed.js";
 
 /* App Config */
 dotenv.config();
@@ -30,8 +31,9 @@ if (process.env.MONGO_URL) {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  }).then(() => {
+  }).then(async () => {
     console.log("MONGODB CONNECTED");
+    await seedUsers();
   }).catch((err) => {
     console.error("MongoDB Connection Error:", err);
   });

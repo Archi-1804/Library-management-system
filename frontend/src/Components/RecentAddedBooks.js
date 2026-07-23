@@ -1,36 +1,91 @@
-import React from 'react'
-import './RecentAddedBooks.css'
+import React from 'react';
+import './RecentAddedBooks.css';
+import { Link } from 'react-router-dom';
+import StarIcon from '@material-ui/icons/Star';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 function RecentAddedBooks() {
+    const recentBooks = [
+        {
+            id: 1,
+            title: "Wings of Fire",
+            author: "A.P.J. Abdul Kalam",
+            category: "Autobiography",
+            rating: "4.9",
+            cover: "https://images-na.ssl-images-amazon.com/images/I/71m-MxdJ2WL.jpg",
+            status: "Available"
+        },
+        {
+            id: 2,
+            title: "Atomic Habits",
+            author: "James Clear",
+            category: "Self-Help",
+            rating: "4.8",
+            cover: "https://images-na.ssl-images-amazon.com/images/I/91VokXkn8hL.jpg",
+            status: "Available"
+        },
+        {
+            id: 3,
+            title: "Good to Great",
+            author: "Jim Collins",
+            category: "Business",
+            rating: "4.7",
+            cover: "https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg",
+            status: "On Hold"
+        },
+        {
+            id: 4,
+            title: "The Subtle Art of Not Giving",
+            author: "Mark Manson",
+            category: "Philosophy",
+            rating: "4.6",
+            cover: "https://images-na.ssl-images-amazon.com/images/I/71t4GuxLCuL.jpg",
+            status: "Available"
+        }
+    ];
+
     return (
-        <div className='recentaddedbooks-container'>
-            <h className='recentbooks-title'>Recent Uploads</h>
-            <div className='recentbooks'>
-                <div className='images'>
-                    <img className='recent-book' src='https://inkinmytea.files.wordpress.com/2011/12/apj.jpg?w=640' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/91VokXkn8hL.jpg' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/71m-MxdJ2WL.jpg' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/71t4GuxLCuL.jpg' alt=''></img>
-                    <img className='recent-book' src='https://19en282jw7pc3zpwj22pg8v0-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/Good-to-Great-Jim-Collins.jpg' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/81mXQdi5x+L.jpg' alt=''></img>
-                    <img className='recent-book' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498813353l/34267304.jpg' alt=''></img>
-                    <img className='recent-book' src='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg?ts=1588152105' alt=''></img>
+        <section className="catalog-section">
+            <div className="catalog-container">
+                <div className="catalog-header">
+                    <div>
+                        <span className="badge-pill badge-indigo mb-1">Recent Index</span>
+                        <h2 className="catalog-title">Freshly Uploaded Catalog Items</h2>
+                    </div>
+                    <Link to="/books" className="catalog-see-all">
+                        <span>View Complete Index</span>
+                        <ArrowForwardIcon style={{ fontSize: 16 }} />
+                    </Link>
                 </div>
-                <div className='images'>
-                    <img className='recent-book' src='https://inkinmytea.files.wordpress.com/2011/12/apj.jpg?w=640' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/91VokXkn8hL.jpg' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/71m-MxdJ2WL.jpg' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/71t4GuxLCuL.jpg' alt=''></img>
-                    <img className='recent-book' src='https://19en282jw7pc3zpwj22pg8v0-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/Good-to-Great-Jim-Collins.jpg' alt=''></img>
-                    <img className='recent-book' src='https://images-na.ssl-images-amazon.com/images/I/81mXQdi5x+L.jpg' alt=''></img>
-                    <img className='recent-book' src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498813353l/34267304.jpg' alt=''></img>
-                    <img className='recent-book' src='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg?ts=1588152105' alt=''></img>
+
+                <div className="catalog-grid">
+                    {recentBooks.map((book) => (
+                        <div key={book.id} className="catalog-card bento-card">
+                            <div className="catalog-cover-box">
+                                <img src={book.cover} alt={book.title} className="catalog-img" />
+                                <span className={`status-pill ${book.status === 'Available' ? 'status-green' : 'status-amber'}`}>
+                                    <span className="status-dot"></span>
+                                    {book.status}
+                                </span>
+                            </div>
+                            <div className="catalog-details">
+                                <span className="catalog-cat">{book.category}</span>
+                                <h3 className="catalog-name">{book.title}</h3>
+                                <p className="catalog-author">By {book.author}</p>
+                                <div className="catalog-footer">
+                                    <div className="catalog-rating">
+                                        <StarIcon className="star-icon" />
+                                        <span>{book.rating}</span>
+                                    </div>
+                                    <Link to="/signin" className="catalog-btn">Reserve</Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
-        </div>
-    )
+        </section>
+    );
 }
 
-export default RecentAddedBooks
+export default RecentAddedBooks;

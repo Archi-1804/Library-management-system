@@ -1,13 +1,175 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Surface Depth Palette (Clean Light Aesthetic) */
+  --surface-0: #FFFFFF;
+  --surface-1: #F8F9FB;
+  --surface-2: #F1F3F7;
+  --surface-3: #E8EBF0;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+  --surface-nav: rgba(255, 255, 255, 0.92);
+
+  /* Refined Accent Engine */
+  --accent-indigo: #4F46E5;
+  --accent-indigo-glow: rgba(79, 70, 229, 0.18);
+  --accent-violet: #7C3AED;
+  --accent-cyan: #0891B2;
+  --accent-emerald: #059669;
+  --accent-amber: #D97706;
+
+  /* Text & Content Hierarchy */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #94A3B8;
+  --text-disabled: #CBD5E1;
+
+  /* Border System */
+  --border-subtle: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --border-accent: rgba(79, 70, 229, 0.35);
+
+  /* Compact Spacing System */
+  --space-1: 6px;
+  --space-2: 12px;
+  --space-3: 18px;
+  --space-4: 24px;
+  --space-5: 28px;
+  --space-6: 32px;
+  --space-8: 40px;
+  --space-10: 48px;
+  --space-12: 56px;
+
+  /* Typography Scales */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Radii & Shadows */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 30px rgba(79, 70, 229, 0.12);
+
+  /* Transitions */
+  --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.15s var(--ease-out-smooth);
+  --transition-normal: all 0.25s var(--ease-out-smooth);
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+  background-color: var(--surface-0);
+  color: var(--text-primary);
+  font-family: var(--font-body);
 }
+
+body {
+  margin: 0;
+  background-color: var(--surface-0);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.04) 0%, transparent 60%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+code, kbd {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: var(--radius-xs);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Common UI Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #0F172A 0%, #334155 50%, #4F46E5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-indigo {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bento-card {
+  background: var(--surface-0);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  background: var(--surface-0);
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.badge-indigo {
+  background: rgba(79, 70, 229, 0.08);
+  color: #4F46E5;
+  border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.badge-emerald {
+  background: rgba(5, 150, 105, 0.08);
+  color: #059669;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+
+
